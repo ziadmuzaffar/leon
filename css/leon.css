@@ -1,0 +1,375 @@
+/************ Root ************/
+:root {
+    --primary: #10cab7;
+    --secondry: #2c4755;
+    --third: #f6f6f6;
+}
+
+/************ Fonts ************/
+@font-face {
+    font-family: 'WorkSans';
+    src: url('../fonts/WorkSans-Regular.ttf');
+}
+
+/************ Global ************/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "WorkSans", sans-serif;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+/************ Style ************/
+.blocks {
+    padding: 60px 0;
+}
+
+.blocks > h3 {
+    color: var(--secondry);
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.blocks > p {
+    color: #797979;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 320px) {
+    .blocks > h3 {
+        font-size: 40px;
+    }
+    .blocks > p {
+        font-size: 17px;
+    }
+}
+
+.blocks > h3,
+.blocks > p {
+    text-align: center;
+}
+
+/************ Navbar ************/
+.navbar .navbar-brand img {
+    width: 60px;
+}
+
+.navbar .navbar-toggler {
+    border: 2px solid var(--secondry);
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+    padding: 0 15px;
+}
+
+@media (max-width: 991px) {
+    .navbar .navbar-nav .nav-item .nav-link {
+        padding: 7.5px 0;
+    }
+}
+
+.navbar .navbar-nav .nav-item .nav-link span {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.navbar .navbar-nav .nav-item .nav-link i,
+.navbar .navbar-nav .nav-item .nav-link span {
+    color: var(--secondry);
+}
+
+/************ Landing ************/
+.landing {
+    background-image: url('../img/landing.webp');
+    background-size: cover;
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.landing h1 {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.landing p {
+    color: var(--secondry);
+    line-height: 1.8;
+}
+
+/************ Features ************/
+.features, .portfolio, .contact {
+    background-color: var(--third);
+}
+
+.features .feature {
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .features .feature {
+        margin-bottom: 25px;
+    }
+}
+
+.features .feature i {
+    color: var(--primary);
+}
+
+.features .feature h3 {
+    font-weight: 800;
+    margin: 30px 0 10px;
+    font-size: 20px;
+}
+
+.features .feature p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #777;
+}
+
+/************ Services ************/
+.services .service {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 767px) {
+    .services .service {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services .service i {
+        margin: auto;
+    }
+}
+
+.services .service i {
+    color: var(--primary);
+    flex-basis: 60px;
+    font-size: 40px;
+}
+
+.services .service div {
+    flex: 1;
+}
+
+.services .service div h3 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.services .service div p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.services .image-service {
+    width: 260px;
+    position: relative;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .services .image-service {
+        display: none;
+    }
+}
+
+.services .image-service::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    right: -50px;
+    background-color: var(--secondry);
+    z-index: -1;
+
+}
+
+.services .image-service img {
+    width: 100%;
+    height: 100%;
+}
+
+/************ Portfolio ************/
+.portfolio .card .card-body .card-text {
+    color: #777;
+    line-height: 1.8;
+}
+@media (max-width: 991px) {
+    .portfolio .card {
+        margin-bottom: 25px;
+    }
+}
+
+/************ About ************/
+.about .image-about {
+    width: 250px;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .about .image-about {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+    .about .image-about {
+        max-width: 250px;
+        margin: auto;
+    }
+}
+
+.about .image-about::before {
+    left: -20px;
+    background-color: var(--secondry);
+    width: 100px;
+    height: calc(100% + 80px);
+}
+
+.about .image-about::after {
+    width: 120px;
+    height: 300px;
+    border-left: 60px solid var(--primary);
+    border-bottom: 60px solid var(--primary);
+    right: -150px;
+}
+
+.about .image-about::before,
+.about .image-about::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    z-index: -1;
+}
+
+@media (max-width: 991px) {
+    .about .image-about::before,
+    .about .image-about::after {
+        display: none;
+    }
+}
+
+.about .image-about img {
+    width: 100%;
+    height: 375px;
+}
+
+.about .info {
+    padding-left: 100px;
+}
+
+@media (max-width: 991px) {
+    .about .info {
+        padding-left: 0;
+    }
+}
+
+.about .info p {
+    line-height: 1.8;
+}
+
+@media (max-width: 991px) {
+    .about .info p {
+        text-align: center;
+    }
+}
+
+.about .info p:first-of-type {
+    font-weight: bold;
+}
+
+.about .info hr {
+    width: 50%;
+    margin: 50px 0;
+    display: block;
+    border-color: var(--primary);
+    border-width: 3px;
+}
+
+@media (max-width: 991px) {
+    .about .info hr {
+        margin: 50px auto;
+    }
+}
+
+/************ Contact ************/
+.contact .container h3 {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--secondry);
+    letter-spacing: -2px;
+}
+
+@media (max-width: 395px) {
+    .contact .container h3 {
+        font-size: 25px;
+    }
+}
+
+.contact .container a span {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+
+
+@media (max-width: 395px) {
+    .contact .container a span {
+        font-size: 20px;
+    }
+}
+
+.contact .container div a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.contact .container p {
+    font-size: 17px;
+}
+
+.contact .container div a i {
+    color: var(--secondry);
+    font-size: 20px;
+}
+
+/************ Footer ************/
+.footer {
+    background-color: var(--secondry);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+.footer p span {
+    color: var(--primary);
+    font-weight: bold;
+}
